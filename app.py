@@ -25,7 +25,7 @@ def my_form_post():
         f.write(requests.get(text).content)
         f.close()
         #style_transfer("images/profile.jpg")
-        style_transfer(sourceImagePath="images/input/"+imageName,outputPath=outputImagePath)
+        style_transfer(sourceImagePath=contentImagePath,outputPath=outputImagePath, filterPath="images/styles/darksideofthemoon.jpeg")
     return send_file(outputImagePath,mimetype='image/jpg')
 
 

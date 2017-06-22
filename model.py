@@ -17,12 +17,11 @@ from scipy.optimize import fmin_l_bfgs_b
 from scipy.misc import imsave
 
 
-def style_transfer(sourceImagePath, outputPath):
-    content_image_path = 'images/profile.jpg'
+def style_transfer(sourceImagePath, outputPath,filterPath):
     content_image_path = sourceImagePath
-    style_image_path = 'images/styles/DJ.jpg'
-    height = 125
-    width = 125
+    style_image_path = filterPath
+    height = 500
+    width = 500
     # In[4]:
 
     content_weights = [0.025]
