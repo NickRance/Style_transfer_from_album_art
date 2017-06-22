@@ -26,7 +26,9 @@ def my_form_post():
         f.close()
         #style_transfer("images/profile.jpg")
         style_transfer(sourceImagePath=contentImagePath,outputPath=outputImagePath, filterPath="images/styles/darksideofthemoon.jpeg")
-    return send_file(outputImagePath,mimetype='image/jpg')
+        return("Ok re-enter the image in 10 minutes")
+    else:
+        return send_file(outputImagePath,mimetype='image/jpg')
 
 
 if __name__ == '__main__':
