@@ -18,3 +18,5 @@ requests == 2.10.0
 
 # model.py: 16,17
 scipy == 0.19.0
+
+tensorflow ==1.2.0
