@@ -20,8 +20,8 @@ from scipy.misc import imsave
 def style_transfer(sourceImagePath, outputPath,filterPath):
     content_image_path = sourceImagePath
     style_image_path = filterPath
-    height = 500
-    width = 500
+    height = 125
+    width = 125
     # In[4]:
 
     content_weights = [0.025]
