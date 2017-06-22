@@ -17,7 +17,7 @@ from scipy.optimize import fmin_l_bfgs_b
 from scipy.misc import imsave
 
 
-def style_transfer(sourceImagePath):
+def style_transfer(sourceImagePath, outputPath):
     content_image_path = 'images/profile.jpg'
     content_image_path = sourceImagePath
     style_image_path = 'images/styles/DJ.jpg'
@@ -25,8 +25,8 @@ def style_transfer(sourceImagePath):
     width = 125
     # In[4]:
 
-    content_weight = [0.025]
-    style_weight = [2.5]
+    content_weights = [0.025]
+    style_weights = [2.5]
     # content_weights = [0.025, 0.05, 0.75, 0.1]
     # style_weights = [2.0, 2.5, 3.0]
     total_variation_weights = [1.0]
@@ -36,14 +36,12 @@ def style_transfer(sourceImagePath):
 
     style_image = Image.open(style_image_path)
     style_image = style_image.resize((height, width))
-    style_image
 
     # In[6]:
 
 
     content_image = Image.open(content_image_path)
     content_image = content_image.resize((height, width))
-    content_image
 
     # In[7]:
 
@@ -207,4 +205,4 @@ def style_transfer(sourceImagePath):
 
     # In[22]:
 
-    images[0].save(sourceImagePath+".png")
+    images[0].save(outputPath+".jpg")

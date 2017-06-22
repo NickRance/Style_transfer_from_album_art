@@ -20,13 +20,13 @@ def my_form_post():
     contentImagePath = "images/input/"+imageName
     outputImagePath = "images/output/"+imageName
     # print(file_path)
-    if not os.path.exists(contentImagePath):
+    if not os.path.exists(outputImagePath):
         f = open(contentImagePath, 'wb')
         f.write(requests.get(text).content)
         f.close()
         #style_transfer("images/profile.jpg")
-        style_transfer("images/input/"+imageName)
-    return send_file("images/output/"+imageName+".png",mimetype='image/png')
+        style_transfer(sourceImagePath="images/input/"+imageName,outputPath=outputImagePath)
+    return send_file(outputImagePath,mimetype='image/jpg')
 
 
 if __name__ == '__main__':
