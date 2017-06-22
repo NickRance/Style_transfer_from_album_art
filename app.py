@@ -27,7 +27,7 @@ def my_form_post():
         f.close()
         #style_transfer("images/profile.jpg")
         style_transfer(sourceImagePath=contentImagePath,outputPath=outputImagePath, filterPath="images/styles/darksideofthemoon.jpeg")
-        time.sleep(900)
+        #time.sleep(900)
 
     return send_file(outputImagePath,mimetype='image/jpg')
 
