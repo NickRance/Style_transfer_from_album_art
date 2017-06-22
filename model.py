@@ -205,4 +205,4 @@ def style_transfer(sourceImagePath, outputPath):
 
     # In[22]:
 
-    images[0].save(outputPath+".jpg")
+    images[0].save(outputPath)
