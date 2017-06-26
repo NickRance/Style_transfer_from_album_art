@@ -20,8 +20,8 @@ from scipy.misc import imsave
 
 
 def style_transfer(sourceImagePath, outputPath,filterPath):
-    if not os.path.exists(sourceImagePath):
-        time.sleep(10)
+    # if not os.path.exists(sourceImagePath):
+    #     time.sleep(10)
     content_image_path = sourceImagePath
     style_image_path = filterPath
     height = 125
