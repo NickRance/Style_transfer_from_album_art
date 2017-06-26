@@ -12,6 +12,7 @@ import time
 
 import os
 
+
 app = Flask(__name__)
 q = Queue(connection=conn)
 #scheduler = Scheduler(connection=conn)
@@ -19,12 +20,12 @@ q = Queue(connection=conn)
 
 def controller():
     print("jobs"+str(q.jobs))
-    if len(q.job_ids)==0:
-        return("zero jobs in the q")
-        #return render_template("my-form.html")
+    if len(q.job_ids)==4:
+        #return("4 jobs in the q")
+        return render_template("my-form.html")
     else:
-        return("More than 0 jobs in the q")
-        #return(send_file("images/styles/DJ.jpg",mimetype='image/jpg'))
+        #return("More than 0 jobs in the q")
+        return(send_file("images/styles/DJ.jpg",mimetype='image/jpg'))
 
 def wait60s():
     time.sleep(60)
