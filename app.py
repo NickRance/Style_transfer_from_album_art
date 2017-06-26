@@ -65,7 +65,7 @@ def my_form_post():
 #     else if
 
 def controller():
-    if len(q.jobs_id)==0:
+    if len(q.jobs_ids)==0:
         return render_template("my-form.html")
     else:
         return(send_file("images/styles/darksideofthemoon.jpeg"))
