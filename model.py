@@ -8,6 +8,7 @@ from __future__ import print_function
 import time
 from PIL import Image
 import numpy as np
+import os
 
 
 from keras import backend
@@ -19,6 +20,8 @@ from scipy.misc import imsave
 
 
 def style_transfer(sourceImagePath, outputPath,filterPath):
+    if not os.path.exists(sourceImagePath):
+        time.sleep(10)
     content_image_path = sourceImagePath
     style_image_path = filterPath
     height = 125

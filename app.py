@@ -42,7 +42,7 @@ def wait60s():
 def my_form():
     #schedule_controller()
     while(True):
-        time.sleep(10)
+        time.sleep(10)#refresh-rate
         return(controller())
 
 @app.route('/', methods=['POST'])
@@ -56,7 +56,7 @@ def my_form_post():
     outputImagePath = os.getcwd()+"/images/output/"+imageName
      # print(file_path)
      #if not os.path.exists(outputImagePath):
-    f = open(contentImagePath, 'wb')
+    f = open(contentImagePath, 'wb') #Doesnt write properly for some reason
     f.write(requests.get(text).content)
     f.close()
     print("File Written!")
