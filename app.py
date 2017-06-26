@@ -17,6 +17,17 @@ q = Queue(connection=conn)
 #scheduler = Scheduler(connection=conn)
 
 
+def controller():
+    print("jobs"+str(q.jobs))
+    if len(q.job_ids)==0:
+        return render_template("my-form.html")
+    else:
+        return("More than 0 jobs in the q")
+        #return(send_file("images/styles/DJ.jpg",mimetype='image/jpg'))
+
+def wait60s():
+    time.sleep(60)
+
 
 @app.route('/')
 def my_form():
@@ -28,7 +39,8 @@ def my_form():
 @app.route('/', methods=['POST'])
 #Post requests add a job to the queue
 def my_form_post():
-    q.enqueue(wait60s)
+    return("Post call")
+    #q.enqueue(wait60s)
     # text = request.form['text']
     # imageName = text.split("/")[-1]
     # contentImagePath = "images/input/"+imageName
@@ -65,16 +77,7 @@ def my_form_post():
 #     #If a job is in progress render an image
 #     else if
 
-def controller():
-    print("jobs"+str(q.jobs))
-    if len(q.job_ids)==0:
-        return render_template("my-form.html")
-    else:
-        return("More than 0 jobs in the q")
-        #return(send_file("images/styles/DJ.jpg",mimetype='image/jpg'))
 
-def wait60s():
-    time.sleep(60)
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
