@@ -36,7 +36,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/nick-dev/workspace/projects/style_transfer_heroku/virtualenvironment"
+set -gx VIRTUAL_ENV "/home/nick-dev/workspace/projects/Style_transfer_from_album_art/virtualenvironment"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

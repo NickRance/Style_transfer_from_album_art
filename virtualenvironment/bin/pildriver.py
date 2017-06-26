@@ -1,4 +1,4 @@
-#!/home/nick-dev/workspace/projects/style_transfer_heroku/virtualenvironment/bin/python3
+#!/home/nick-dev/workspace/projects/Style_transfer_from_album_art/virtualenvironment/bin/python3
 """PILdriver, an image-processing calculator using PIL.
 
 An instance of class PILDriver is essentially a software stack machine

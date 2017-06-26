@@ -40,7 +40,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/nick-dev/workspace/projects/style_transfer_heroku/virtualenvironment"
+VIRTUAL_ENV="/home/nick-dev/workspace/projects/Style_transfer_from_album_art/virtualenvironment"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
