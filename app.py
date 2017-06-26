@@ -64,7 +64,7 @@ def my_form_post():
         f.close()
         #style_transfer("images/profile.jpg")
         result = q.enqueue(style_transfer,"sourceImagePath=contentImagePath,outputPath=outputImagePath, filterPath=images/styles/darksideofthemoon.jpeg")
-        my_form()
+        Flask.redirect(Flask.url_for('my_form'))
     #     # scheduler.schedule(
     #     #     scheduled_time=datetime.utcnow(),  # Time for first execution, in UTC timezone
     #     #     func=style_transfer,  # Function to be queued
