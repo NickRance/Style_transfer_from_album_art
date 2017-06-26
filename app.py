@@ -34,8 +34,8 @@ def wait60s():
 def my_form():
     #schedule_controller()
     while(True):
-        controller()
-        time.sleep(15)
+        return(controller())
+        time.sleep(30)
 
 @app.route('/', methods=['POST'])
 #Post requests add a job to the queue
