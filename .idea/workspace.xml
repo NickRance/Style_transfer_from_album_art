@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a471312-7c69-4d91-b302-16d2ba3fd2cd" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/input/15965538_1396118707078809_2085593975885169948_n.jpg?oh=de7a8b9349d159f9c1112178f9af167c&amp;oe=59C79C36" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/input/Beautiful-Food-Photos-9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/input/maggie-grace-portrait-wallpapers_14105_1024x768.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/output/Beautiful-Food-Photos-9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/output/maggie-grace-portrait-wallpapers_14105_1024x768.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.py" afterPath="$PROJECT_DIR$/app.py" />
-    </list>
+    <list default="true" id="1a471312-7c69-4d91-b302-16d2ba3fd2cd" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -163,6 +155,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="styles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Style_transfer_from_album_art" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Style_transfer_from_album_art" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
