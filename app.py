@@ -24,15 +24,15 @@ def emptyDirectory(path):
 
 
 def controller():
-    #The default number of running jobs is 5 on heroku
+    #The default number of running jobs is 6 on heroku
     print("jobs"+str(len(q.jobs)))
-    if len(q.job_ids)==5 and not os.listdir('images/output/'): #If there are no extra jobs and the output directory is empty render the form
+    if len(q.job_ids)==6 and not os.listdir('images/output/'): #If there are no extra jobs and the output directory is empty render the form
         #return("4 jobs in the q")
         return render_template("my-form.html")
-    elif len(q.job_ids)> 5: #If there is currently a job running render the DJ image
+    elif len(q.job_ids)> 6: #If there is currently a job running render the DJ image
         #return("More than 0 jobs in the q")
         return(send_file("images/styles/DJ.jpg",mimetype='image/jpg'))
-    elif len(q.job_ids)==5 and os.listdir('images/output/'):#If there are no extra jobs running and there is a value in the output directory
+    elif len(q.job_ids)==6 and os.listdir('images/output/'):#If there are no extra jobs running and there is a value in the output directory
         urls = [f for f in os.listdir("images/output/")]
         return render_template("show_images.html", urls=urls)
 
