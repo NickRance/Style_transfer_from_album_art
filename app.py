@@ -41,8 +41,6 @@ def wait60s():
 
 @app.route('/')
 def my_form():
-    global initialJobCount
-    initialJobCount = len(q.jobs)
     #schedule_controller()
     while(True):
         return(controller())
@@ -64,7 +62,7 @@ def my_form_post():
         f.close()
         #style_transfer("images/profile.jpg")
         result = q.enqueue(style_transfer,"sourceImagePath=contentImagePath,outputPath=outputImagePath, filterPath=images/styles/darksideofthemoon.jpeg")
-        return(redirect(url_for('my_form')))
+        return(redirect(url_for('my_form'))) #Change this
     #     # scheduler.schedule(
     #     #     scheduled_time=datetime.utcnow(),  # Time for first execution, in UTC timezone
     #     #     func=style_transfer,  # Function to be queued
@@ -94,5 +92,7 @@ def my_form_post():
 
 if __name__ == '__main__':
     emptyDirectory('images/output/')
+    global initialJobCount
+    initialJobCount = len(q.jobs)
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
