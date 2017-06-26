@@ -28,7 +28,7 @@ def controller():
         return render_template("my-form.html")
     elif len(q.job_ids)> initialJobCount: #If there is currently a job running render the DJ image
         #return("More than 0 jobs in the q")
-        return(send_file("images/styles/DJ.jpg",mimetype='image/jpg'))
+        return(send_file(os.getcwd()+"/"+"images/styles/DJ.jpg",mimetype='image/jpg'))
     elif len(q.job_ids)==initialJobCount and len([name for name in os.listdir(os.getcwd()+'/images/output') if os.path.isfile(name)])==0:#If there are no extra jobs running and there is a value in the output directory
         urls = [f for f in os.listdir("images/output/")]
         return render_template("show_images.html", urls=urls)
@@ -42,7 +42,7 @@ def wait60s():
 def my_form():
     #schedule_controller()
     while(True):
-        time.sleep(25)
+        time.sleep(10)
         return(controller())
 
 @app.route('/', methods=['POST'])
@@ -53,12 +53,13 @@ def my_form_post():
     text = request.form['text']
     imageName = text.split("/")[-1]
     contentImagePath = os.getcwd()+"/images/input/"+imageName
-    outputImagePath = os.getcwd()+"images/output/"+imageName
+    outputImagePath = os.getcwd()+"/images/output/"+imageName
      # print(file_path)
      #if not os.path.exists(outputImagePath):
     f = open(contentImagePath, 'wb')
     f.write(requests.get(text).content)
     f.close()
+    print("File Written!")
         #style_transfer("images/profile.jpg")
     result = q.enqueue_call(style_transfer,kwargs={"sourceImagePath":contentImagePath,"outputPath":outputImagePath, "filterPath": os.getcwd()+"/images/styles/darksideofthemoon.jpeg"})
     return(redirect(url_for('my_form'))) #Change this
