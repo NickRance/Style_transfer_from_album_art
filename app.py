@@ -1,7 +1,4 @@
-from flask import Flask
-from flask import request
-from flask import render_template
-from flask import send_file
+from flask import Flask, request, redirect, render_template, send_file, url_for
 from model import style_transfer
 import requests
 import datetime
@@ -64,7 +61,7 @@ def my_form_post():
         f.close()
         #style_transfer("images/profile.jpg")
         result = q.enqueue(style_transfer,"sourceImagePath=contentImagePath,outputPath=outputImagePath, filterPath=images/styles/darksideofthemoon.jpeg")
-        Flask.redirect(Flask.url_for('my_form'))
+        redirect(url_for('my_form'))
     #     # scheduler.schedule(
     #     #     scheduled_time=datetime.utcnow(),  # Time for first execution, in UTC timezone
     #     #     func=style_transfer,  # Function to be queued
