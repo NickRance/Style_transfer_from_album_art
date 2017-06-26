@@ -32,7 +32,7 @@ def my_form_post():
         #style_transfer("images/profile.jpg")
         result = q.enqueue(style_transfer,"sourceImagePath=contentImagePath,outputPath=outputImagePath, filterPath=images/styles/darksideofthemoon.jpeg")
         #time.sleep(900)
-        print("result.result: "+result.result)
+        print("result.result: "+str(result.result))
         while(result.result==None):
             print("Waiting for style transfer to conclude")
             time.sleep(10)
