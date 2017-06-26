@@ -23,13 +23,13 @@ def controller():
     #The default number of running jobs is 7 on heroku
     print("jobs"+str(len(q.jobs)))
     print("Initial Job Count: "+str(initialJobCount))
-    if len(q.job_ids)==initialJobCount and not os.listdir('images/output/'): #If there are no extra jobs and the output directory is empty render the form
+    if len(q.job_ids)==initialJobCount and len([name for name in os.listdir('images/output') if os.path.isfile(name)])==0: #If there are no extra jobs and the output directory is empty render the form
         #return("4 jobs in the q")
         return render_template("my-form.html")
     elif len(q.job_ids)> initialJobCount: #If there is currently a job running render the DJ image
         #return("More than 0 jobs in the q")
         return(send_file("images/styles/DJ.jpg",mimetype='image/jpg'))
-    elif len(q.job_ids)==initialJobCount and os.listdir('images/output/'):#If there are no extra jobs running and there is a value in the output directory
+    elif len(q.job_ids)==initialJobCount and len([name for name in os.listdir('images/output') if os.path.isfile(name)])==0:#If there are no extra jobs running and there is a value in the output directory
         urls = [f for f in os.listdir("images/output/")]
         return render_template("show_images.html", urls=urls)
 
@@ -90,7 +90,7 @@ def my_form_post():
 
 
 if __name__ == '__main__':
-   # emptyDirectory('images/output/')
+    emptyDirectory('images/output/')
     global initialJobCount
     initialJobCount = len(q.jobs)
     port = int(os.environ.get('PORT', 5000))
