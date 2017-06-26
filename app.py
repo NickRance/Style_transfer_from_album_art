@@ -42,6 +42,7 @@ def wait60s():
 def my_form():
     #schedule_controller()
     while(True):
+        print("Still sleeping\n Number of jobs: "+str(len(q.jobs)))
         time.sleep(10)#refresh-rate
         return(controller())
 
@@ -61,8 +62,8 @@ def my_form_post():
     f.close()
     print("File Written!")
         #style_transfer("images/profile.jpg")
-    result = q.enqueue_call(style_transfer,kwargs={"sourceImagePath":contentImagePath,"outputPath":outputImagePath, "filterPath": os.getcwd()+"/images/styles/darksideofthemoon.jpeg"})
-    return(redirect(url_for('my_form'))) #Change this
+    result = q.enqueue_call(func=style_transfer,kwargs={"sourceImagePath":contentImagePath,"outputPath":outputImagePath, "filterPath": os.getcwd()+"/images/styles/darksideofthemoon.jpeg"},timeout=240)
+    return(redirect(url_for('controller'))) #Change this
     #     # scheduler.schedule(
     #     #     scheduled_time=datetime.utcnow(),  # Time for first execution, in UTC timezone
     #     #     func=style_transfer,  # Function to be queued
