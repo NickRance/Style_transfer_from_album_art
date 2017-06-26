@@ -90,7 +90,7 @@ def my_form_post():
 
 
 if __name__ == '__main__':
-    emptyDirectory('images/output/')
+   # emptyDirectory('images/output/')
     global initialJobCount
     initialJobCount = len(q.jobs)
     port = int(os.environ.get('PORT', 5000))
