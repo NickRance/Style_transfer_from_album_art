@@ -29,7 +29,7 @@ def controller():
     if len(q.job_ids)==4 and not os.listdir('images/output/'): #If there are no extra jobs and the output directory is empty render the form
         #return("4 jobs in the q")
         return render_template("my-form.html")
-    elif len(q.jobs_ids)>= 4: #If there is currently a job running render the DJ image
+    elif len(q.job_ids)>= 4: #If there is currently a job running render the DJ image
         #return("More than 0 jobs in the q")
         return(send_file("images/styles/DJ.jpg",mimetype='image/jpg'))
     elif len(q.job_ids)==4 and os.listdir('images/output/'):#If there are no extra jobs running and there is a value in the output directory
