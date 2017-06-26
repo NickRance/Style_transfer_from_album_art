@@ -50,18 +50,18 @@ def my_form():
 def my_form_post():
     #return("Post call")
     #q.enqueue(wait60s)
-     text = request.form['text']
-     imageName = text.split("/")[-1]
-     contentImagePath = "images/input/"+imageName
-     outputImagePath = "images/output/"+imageName
+    text = request.form['text']
+    imageName = text.split("/")[-1]
+    contentImagePath = "images/input/"+imageName
+    outputImagePath = "images/output/"+imageName
      # print(file_path)
-     if not os.path.exists(outputImagePath):
-        f = open(contentImagePath, 'wb')
-        f.write(requests.get(text).content)
-        f.close()
+     #if not os.path.exists(outputImagePath):
+    f = open(contentImagePath, 'wb')
+    f.write(requests.get(text).content)
+    f.close()
         #style_transfer("images/profile.jpg")
-        result = q.enqueue_call(style_transfer,kwargs={"sourceImagePath":contentImagePath,"outputPath":outputImagePath, "filterPath":"images/styles/darksideofthemoon.jpeg"})
-        return(redirect(url_for('my_form'))) #Change this
+    result = q.enqueue_call(style_transfer,kwargs={"sourceImagePath":contentImagePath,"outputPath":outputImagePath, "filterPath":"images/styles/darksideofthemoon.jpeg"})
+    return(redirect(url_for('my_form'))) #Change this
     #     # scheduler.schedule(
     #     #     scheduled_time=datetime.utcnow(),  # Time for first execution, in UTC timezone
     #     #     func=style_transfer,  # Function to be queued
