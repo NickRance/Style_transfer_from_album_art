@@ -9,7 +9,6 @@ import time
 
 import os
 
-initialJobCount=0
 app = Flask(__name__)
 q = Queue(connection=conn)
 #scheduler = Scheduler(connection=conn)
