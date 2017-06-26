@@ -70,7 +70,7 @@ def controller():
     if len(q.job_ids)==0:
         return render_template("my-form.html")
     else:
-        return(send_file("images/styles/darksideofthemoon.jpeg",mimetype='image/jpg'))
+        return(send_file("images/styles/DJ.jpg",mimetype='image/jpg'))
 
 def wait60s():
     time.sleep(60)
