@@ -60,7 +60,7 @@ def my_form_post():
         f.write(requests.get(text).content)
         f.close()
         #style_transfer("images/profile.jpg")
-        result = q.enqueue(style_transfer,"sourceImagePath=contentImagePath,outputPath=outputImagePath, filterPath=images/styles/darksideofthemoon.jpeg")
+        result = q.enqueue_call(style_transfer,kwargs={"sourceImagePath":contentImagePath,"outputPath":outputImagePath, "filterPath":"images/styles/darksideofthemoon.jpeg"})
         return(redirect(url_for('my_form'))) #Change this
     #     # scheduler.schedule(
     #     #     scheduled_time=datetime.utcnow(),  # Time for first execution, in UTC timezone
