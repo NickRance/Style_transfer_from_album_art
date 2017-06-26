@@ -20,7 +20,8 @@ q = Queue(connection=conn)
 def controller():
     print("jobs"+str(q.jobs))
     if len(q.job_ids)==0:
-        return render_template("my-form.html")
+        return("zero jobs in the q")
+        #return render_template("my-form.html")
     else:
         return("More than 0 jobs in the q")
         #return(send_file("images/styles/DJ.jpg",mimetype='image/jpg'))
