@@ -62,7 +62,7 @@ def my_form_post():
     f.close()
     print("File Written!")
         #style_transfer("images/profile.jpg")
-    result = q.enqueue_call(func=style_transfer,kwargs={"sourceImagePath":contentImagePath,"outputPath":outputImagePath, "filterPath": os.getcwd()+"/images/styles/darksideofthemoon.jpeg"},timeout=240)
+    result = q.enqueue_call(func=style_transfer,kwargs={"sourceImagePath":contentImagePath,"outputPath":outputImagePath, "filterPath": os.getcwd()+"/images/styles/darksideofthemoon.jpeg"},timeout=360)
     return(redirect(url_for('controller'))) #Change this
     #     # scheduler.schedule(
     #     #     scheduled_time=datetime.utcnow(),  # Time for first execution, in UTC timezone
