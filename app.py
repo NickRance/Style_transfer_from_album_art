@@ -66,10 +66,11 @@ def my_form_post():
 #     else if
 
 def controller():
+    print("job_ids"+str(len(q.job_ids)))
     if len(q.job_ids)==0:
         return render_template("my-form.html")
     else:
-        return(send_file("images/styles/darksideofthemoon.jpeg"))
+        return(send_file("images/styles/darksideofthemoon.jpeg",mimetype='image/jpg'))
 
 def wait60s():
     time.sleep(60)
