@@ -25,7 +25,7 @@ def emptyDirectory(path):
 
 def controller():
     #The default number of running jobs is 4 on heroku
-    print("jobs"+len(str(q.jobs)))
+    print("jobs"+str(len(q.jobs)))
     if len(q.job_ids)==4 and not os.listdir('images/output/'): #If there are no extra jobs and the output directory is empty render the form
         #return("4 jobs in the q")
         return render_template("my-form.html")
