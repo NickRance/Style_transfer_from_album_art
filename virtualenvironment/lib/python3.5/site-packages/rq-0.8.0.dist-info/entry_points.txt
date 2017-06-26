@@ -1,0 +1,5 @@
+[console_scripts]
+rqinfo = rq.cli:info
+rq = rq.cli:main
+rqworker = rq.cli:worker
+
