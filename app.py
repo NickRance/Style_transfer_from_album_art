@@ -43,7 +43,7 @@ def my_form():
     #schedule_controller()
     while(True):
         print("Still sleeping\n Number of jobs: "+str(len(q.jobs)))
-        time.sleep(10)#refresh-rate
+        time.sleep(5)#refresh-rate
         return(controller())
 
 @app.route('/', methods=['POST'])
@@ -63,7 +63,7 @@ def my_form_post():
     print("File Written!")
         #style_transfer("images/profile.jpg")
     result = q.enqueue_call(func=style_transfer,kwargs={"sourceImagePath":contentImagePath,"outputPath":outputImagePath, "filterPath": os.getcwd()+"/images/styles/darksideofthemoon.jpeg"},timeout=360)
-    return(redirect(url_for('controller'))) #Change this
+    return(redirect(url_for('my_form')))
     #     # scheduler.schedule(
     #     #     scheduled_time=datetime.utcnow(),  # Time for first execution, in UTC timezone
     #     #     func=style_transfer,  # Function to be queued
