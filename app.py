@@ -4,11 +4,15 @@ from flask import render_template
 from flask import send_file
 from model import style_transfer
 import requests
+from rq import Queue
+from worker import conn
 import time
 
 import os
 
 app = Flask(__name__)
+q = Queue(connection=conn)
+
 
 @app.route('/')
 def my_form():
@@ -26,7 +30,7 @@ def my_form_post():
         f.write(requests.get(text).content)
         f.close()
         #style_transfer("images/profile.jpg")
-        style_transfer(sourceImagePath=contentImagePath,outputPath=outputImagePath, filterPath="images/styles/darksideofthemoon.jpeg")
+        q.enqueue(style_transfer(sourceImagePath=contentImagePath,outputPath=outputImagePath, filterPath="images/styles/darksideofthemoon.jpeg"))
         #time.sleep(900)
 
     return send_file(outputImagePath,mimetype='image/jpg')
