@@ -46,7 +46,7 @@ def my_form():
     #schedule_controller()
     while(True):
         return(controller())
-        time.sleep(30)
+        time.sleep(25)
 
 @app.route('/', methods=['POST'])
 #Post requests add a job to the queue
@@ -64,6 +64,7 @@ def my_form_post():
         f.close()
         #style_transfer("images/profile.jpg")
         result = q.enqueue(style_transfer,"sourceImagePath=contentImagePath,outputPath=outputImagePath, filterPath=images/styles/darksideofthemoon.jpeg")
+        my_form()
     #     # scheduler.schedule(
     #     #     scheduled_time=datetime.utcnow(),  # Time for first execution, in UTC timezone
     #     #     func=style_transfer,  # Function to be queued
